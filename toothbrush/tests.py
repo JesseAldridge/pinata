@@ -1,13 +1,10 @@
-import shutil, os
+import shutil, os, sys, threading, StringIO
 
-from pinata2 import pinata
+from pinata import pinata
 
 assert pinata.is_letter('a') == True
 assert pinata.is_letter('1') == False
 assert pinata.is_letter('#') == False
-
-simulate_keystroke('a')
-assert pinata.wait_for_key() == 'a'
 
 if not os.path.exists('test_dir'):
   os.mkdir('test_dir')

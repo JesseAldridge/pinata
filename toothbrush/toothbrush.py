@@ -2,6 +2,18 @@ import os
 
 from pinata import pinata
 
+def wait_for_key():
+  # Return a single character from stdin.
+
+  fd = sys.stdin.fileno()
+  old_settings = termios.tcgetattr(fd)
+  try:
+    tty.setraw(sys.stdin.fileno())
+    ch = sys.stdin.read(1)
+  finally:
+    termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+  return ch
+
 def main():
   query_string = ''
   dir_path = os.path.expanduser('~/Dropbox/tbrush_notes')
@@ -9,7 +21,7 @@ def main():
 
   while True:
     print 'query_string: [{}]'.format(query_string)
-    ch = Pinata.wait_for_key()
+    ch = wait_for_key()
     if Pinata.is_letter(ch):
       query_string += ch
     print Pinata.find_all_files(query_string)

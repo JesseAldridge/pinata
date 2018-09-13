@@ -2,7 +2,7 @@ What is the purpose?
 test the autodev idea
 
 What is the first step?  second?
-right some code
+write some code
 make it work via autodev approach
 keep an open mind about what that might look like
 update diagram with new thoughts

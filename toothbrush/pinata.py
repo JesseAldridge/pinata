@@ -3,18 +3,6 @@ import sys, termios, tty, glob, os
 def is_letter(ch):
   return ch.isalpha()
 
-def wait_for_key():
-  # Return a single character from stdin.
-
-  fd = sys.stdin.fileno()
-  old_settings = termios.tcgetattr(fd)
-  try:
-    tty.setraw(sys.stdin.fileno())
-    ch = sys.stdin.read(1)
-  finally:
-    termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-  return ch
-
 class FindAllFiles:
   path_to_text = {}
 
@@ -41,6 +29,5 @@ class Pinata:
   pass
 pinata = Pinata()
 pinata.is_letter = is_letter
-pinata.wait_for_key = wait_for_key
 pinata.init_find_all_files = init_find_all_files
 pinata.find_all_files = find_all_files
