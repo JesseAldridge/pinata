@@ -1,0 +1,29 @@
+What is the purpose?
+test the autodev idea
+
+What is the first step?  second?
+right some code
+make it work via autodev approach
+keep an open mind about what that might look like
+update diagram with new thoughts
+
+What are the input/output formats?
+english queries and code
+functioning program
+
+Is there an easier way?  (avoid coding)
+could just make a function call called read...
+
+Can I preempt any blockers?
+no blockers
+
+How could this be done faster?
+experimenting
+get to the answer faster
+talk to people about it
+
+What are the edge cases?
+going to discover that
+
+Do I have a fast feedback loop?
+yeah
